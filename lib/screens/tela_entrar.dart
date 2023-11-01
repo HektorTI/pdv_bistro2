@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/screens/esqueceu_senha.dart';
+import 'package:pdv_bistro2/screens/tela_registrar.dart';
 
 class TelaEntrar extends StatelessWidget {
   const TelaEntrar({Key? key}) : super(key: key);
@@ -32,9 +33,10 @@ class TelaEntrar extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: SizedBox(
-            width: 500,
-            height: 500,
+            width: 550,
+            height: 550,
             child: Card(
+              color: const Color.fromARGB(255, 225, 227, 227),
               elevation: 5,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -63,12 +65,14 @@ class TelaEntrar extends StatelessWidget {
                         border: OutlineInputBorder(),
                       ),
                     ),
+                    const SizedBox(height: 10),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Email',
                         border: OutlineInputBorder(),
                       ),
                     ),
+                    const SizedBox(height: 10),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'CPF',
@@ -93,9 +97,7 @@ class TelaEntrar extends StatelessWidget {
                           },
                           child: const Text(
                             "Esqueceu sua senha?",
-                            style: TextStyle(
-                              color: Color(0xFF6A707C),
-                            ),
+                            style: TextStyle(color: Colors.blue),
                           ),
                         ),
                       ),
@@ -104,7 +106,7 @@ class TelaEntrar extends StatelessWidget {
                     MaterialButton(
                       color: const Color.fromARGB(255, 48, 48, 48),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(26),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       minWidth: 300,
                       onPressed: () {
@@ -152,7 +154,7 @@ class TelaEntrar extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const TelaEntrar(),
+                                    builder: (context) => const TelaRegsitrar(),
                                   ),
                                 );
                               },

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/screens/esqueceu_senha.dart';
+import 'package:pdv_bistro2/screens/tela_entrar.dart';
 
 class TelaRegsitrar extends StatelessWidget {
   const TelaRegsitrar({Key? key}) : super(key: key);
@@ -32,9 +33,10 @@ class TelaRegsitrar extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: SizedBox(
-            width: 500,
-            height: 500,
+            width: 550,
+            height: 550,
             child: Card(
+              color: const Color.fromARGB(255, 225, 227, 227),
               elevation: 5,
               child: Padding(
                 padding: const EdgeInsets.all(6.0),
@@ -55,28 +57,28 @@ class TelaRegsitrar extends StatelessWidget {
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Email',
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'CPF',
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Senha',
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Comfirme senha',
@@ -135,7 +137,7 @@ class TelaRegsitrar extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const EsqueceuSenha(),
+                                    builder: (context) => const TelaEntrar(),
                                   ),
                                 );
                               },

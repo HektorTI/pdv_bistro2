@@ -34,7 +34,10 @@ class BemVindo extends StatelessWidget {
           child: SizedBox(
             width: 500,
             height: 500,
+
+            //* Card Principal Centro
             child: Card(
+              color: const Color.fromARGB(255, 225, 227, 227),
               elevation: 5,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -46,6 +49,7 @@ class BemVindo extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 48, 48, 48),
                       ),
                     ),
                     const Text(
@@ -53,6 +57,7 @@ class BemVindo extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 48, 48, 48),
                       ),
                     ),
                     const SizedBox(height: 80),
