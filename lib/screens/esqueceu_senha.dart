@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class TelaCadastro extends StatefulWidget {
-  const TelaCadastro({super.key});
+class EsqueceuSenha extends StatefulWidget {
+  const EsqueceuSenha({super.key});
 
   @override
-  State<TelaCadastro> createState() => _TelaCadastroState();
+  State<EsqueceuSenha> createState() => _EsqueceuSenhaState();
 }
 
-class _TelaCadastroState extends State<TelaCadastro> {
+class _EsqueceuSenhaState extends State<EsqueceuSenha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 48, 48, 48),
         title: const Text(
-          'Tela Cadastro',
+          'Esqueceu Senha',
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(
