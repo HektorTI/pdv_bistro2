@@ -97,7 +97,6 @@ class TelaEntrar extends StatelessWidget {
                           },
                           child: const Text(
                             "Esqueceu sua senha?",
-                            style: TextStyle(color: Colors.blue),
                           ),
                         ),
                       ),
