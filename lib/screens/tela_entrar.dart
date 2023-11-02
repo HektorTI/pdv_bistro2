@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/screens/esqueceu_senha.dart';
+import 'package:pdv_bistro2/screens/tela_login.dart';
 import 'package:pdv_bistro2/screens/tela_registrar.dart';
 
 class TelaEntrar extends StatelessWidget {
@@ -112,14 +113,14 @@ class TelaEntrar extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const EsqueceuSenha(),
+                            builder: (context) => const TelaLogin(),
                           ),
                         );
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(12.0),
                         child: Text(
-                          "ENTRAR",
+                          "Login",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -149,7 +150,7 @@ class TelaEntrar extends StatelessWidget {
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                // Ação ao tocar em "Login"
+                                // Ação ao tocar em "Registrar"
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
