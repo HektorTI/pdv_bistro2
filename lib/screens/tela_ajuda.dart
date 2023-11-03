@@ -4,8 +4,8 @@ import 'package:pdv_bistro2/screens/tela_registrar.dart';
 import 'package:pdv_bistro2/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/widgets/custom_bottom_navigation_bar.dart';
 
-class TelaLogin extends StatelessWidget {
-  const TelaLogin({Key? key}) : super(key: key);
+class TelaAjuda extends StatelessWidget {
+  const TelaAjuda({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TelaLogin extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const Text(
-                        'FUTURA TELA DO APLICATIVO',
+                        'FUTURA TELA DO APLICATIVO HELP',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,

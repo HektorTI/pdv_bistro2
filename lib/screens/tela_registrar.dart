@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pdv_bistro2/screens/esqueceu_senha.dart';
 import 'package:pdv_bistro2/screens/tela_entrar.dart';
+import 'package:pdv_bistro2/screens/tela_login.dart';
+import 'package:pdv_bistro2/widgets/custom_app_bar.dart';
+// import 'package:pdv_bistro2/screens/tela_login.dart';
 
 class TelaRegsitrar extends StatelessWidget {
   const TelaRegsitrar({Key? key}) : super(key: key);
@@ -9,26 +11,7 @@ class TelaRegsitrar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 48, 48, 48),
-        title: const Text(
-          'Software Bistro',
-          style: TextStyle(color: Colors.white),
-        ),
-        leading: Image.asset('assets/images/bistro2.jpg'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.admin_panel_settings,
-              color: Colors.white,
-              // Ícone branco
-            ),
-            onPressed: () {
-              // Ação quando a imagem for clicada
-            },
-          ),
-        ],
-      ),
+      appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -96,14 +79,14 @@ class TelaRegsitrar extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const EsqueceuSenha(),
+                            builder: (context) => const TelaLogin(),
                           ),
                         );
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(12.0),
                         child: Text(
-                          "ENTRAR",
+                          "Login",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -150,50 +133,6 @@ class TelaRegsitrar extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: const Color.fromARGB(255, 225, 227, 227),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            IconButton(
-              icon: const Icon(
-                Icons.delivery_dining,
-                color: Color.fromARGB(255, 48, 48, 48),
-              ),
-              onPressed: () {
-                // Ação para delivery
-              },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.local_dining,
-                color: Color.fromARGB(255, 48, 48, 48),
-              ),
-              onPressed: () {
-                // Ação para mesas
-              },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.chat_bubble,
-                color: Color.fromARGB(255, 48, 48, 48),
-              ),
-              onPressed: () {
-                // Ação para WhatsApp
-              },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.store,
-                color: Color.fromARGB(255, 48, 48, 48),
-              ),
-              onPressed: () {
-                // Ação para balcão
-              },
-            ),
-          ],
         ),
       ),
     );
