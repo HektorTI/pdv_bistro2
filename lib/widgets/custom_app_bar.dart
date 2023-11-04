@@ -29,7 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Text('Software Bistrô',
                   style: TextStyle(fontSize: 26, color: Colors.white)),
-              Text('2 Novembro 2023',
+              Text('3 Novembro 2023',
                   style: TextStyle(fontSize: 12, color: Colors.white)),
             ],
           ),

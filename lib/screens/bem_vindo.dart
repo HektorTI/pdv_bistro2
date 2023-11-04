@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/screens/tela_entrar.dart';
 import 'package:pdv_bistro2/screens/tela_registrar.dart';
