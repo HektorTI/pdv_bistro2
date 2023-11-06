@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pdv_bistro2/screens/tela_ajuda.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/ajuda/tela_ajuda.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pdv_bistro2/screens/tela_registrar.dart';
-import 'package:pdv_bistro2/widgets/custom_app_bar.dart';
-import 'package:pdv_bistro2/widgets/custom_bottom_navigation_bar.dart';
+import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
+import 'package:pdv_bistro2/core/widgets/custom_bottom_navigation_bar.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
 
-class TelaAjuda extends StatelessWidget {
-  const TelaAjuda({Key? key}) : super(key: key);
+class TelaAplicativo extends StatelessWidget {
+  const TelaAplicativo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TelaAjuda extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const Text(
-                        'FUTURA TELA DO APLICATIVO HELP',
+                        'FUTURA TELA DO APLICATIVO',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
