@@ -1,19 +1,16 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
-import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/login/tela_aplicativo.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
 
 class EsqueceuSenha extends StatelessWidget {
-  final ApiController apiController;
-
-  const EsqueceuSenha({Key? key, required this.apiController})
-      : super(key: key);
+  const EsqueceuSenha({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(apiController: apiController),
+      appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -65,14 +62,12 @@ class EsqueceuSenha extends StatelessWidget {
                       ),
                       minWidth: 300,
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => TelaAplicativo(
-                        //       apiController: apiController,
-                        //     ),
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TelaAplicativo(),
+                          ),
+                        );
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(12.0),
@@ -111,9 +106,7 @@ class EsqueceuSenha extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => TelaRegistrar(
-                                      apiController: apiController,
-                                    ),
+                                    builder: (context) => const TelaRegsitrar(),
                                   ),
                                 );
                               },

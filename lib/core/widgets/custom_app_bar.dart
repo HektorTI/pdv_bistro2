@@ -1,14 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/ajuda/tela_ajuda.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  final ApiController apiController;
-
-  const CustomAppBar({Key? key, required this.apiController}) : super(key: key);
+  const CustomAppBar({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _CustomAppBarState createState() => _CustomAppBarState();
 
   @override
@@ -18,13 +16,18 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _CustomAppBarState extends State<CustomAppBar> {
   String dateText = 'Carregando...';
 
+  final CustomAppBarController _controller = CustomAppBarController();
+
   @override
   void initState() {
     super.initState();
-    widget.apiController.fetchDataFromAPI().then((data) {
-      setState(() {
-        dateText = data;
-      });
+    _fetchDataFromAPI();
+  }
+
+  Future<void> _fetchDataFromAPI() async {
+    final result = await _controller.fetchDateText();
+    setState(() {
+      dateText = result;
     });
   }
 
@@ -39,7 +42,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               height: 50,
-              width: 50,
+              width: 50, // Largura do espaço para a imagem da empresa
               child: Image.asset('assets/images/bistro3.png'),
             ),
           ),
@@ -47,16 +50,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Software Bistrô',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                ),
-              ),
+              const Text('Software Bistrô',
+                  style: TextStyle(fontSize: 26, color: Colors.white)),
               Text(
                 dateText,
-                style: const TextStyle(fontSize: 14, color: Colors.white70),
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),
@@ -74,8 +75,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      TelaAjuda(apiController: widget.apiController),
+                  builder: (context) => const TelaAjuda(),
                 ),
               );
             },

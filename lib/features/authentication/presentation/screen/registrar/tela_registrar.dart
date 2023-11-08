@@ -1,20 +1,16 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
-import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/entrar/tela_login.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/login/tela_aplicativo.dart';
 
-class TelaRegistrar extends StatelessWidget {
-  final ApiController apiController;
-
-  const TelaRegistrar({Key? key, required this.apiController})
-      : super(key: key);
+class TelaRegsitrar extends StatelessWidget {
+  const TelaRegsitrar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(apiController: apiController),
+      appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -82,9 +78,7 @@ class TelaRegistrar extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => TelaAplicativo(
-                              apiController: apiController,
-                            ),
+                            builder: (context) => const TelaAplicativo(),
                           ),
                         );
                       },
@@ -125,9 +119,7 @@ class TelaRegistrar extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => TelaLogin(
-                                      apiController: apiController,
-                                    ),
+                                    builder: (context) => const TelaLogin(),
                                   ),
                                 );
                               },
