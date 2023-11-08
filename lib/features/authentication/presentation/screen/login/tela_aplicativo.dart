@@ -2,15 +2,19 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/core/widgets/custom_bottom_navigation_bar.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
 
 class TelaAplicativo extends StatelessWidget {
-  const TelaAplicativo({Key? key}) : super(key: key);
+  final ApiController apiController;
+
+  const TelaAplicativo({Key? key, required this.apiController})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(apiController: apiController),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -68,8 +72,9 @@ class TelaAplicativo extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            const TelaRegsitrar(),
+                                        builder: (context) => TelaRegistrar(
+                                          apiController: apiController,
+                                        ),
                                       ),
                                     );
                                   },

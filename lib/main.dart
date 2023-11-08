@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/entrar/tela_login.dart';
 
 void main() {
-  runApp(const MyApp());
+  final apiController =
+      ApiController(apiKey: 'd62cac6d7fe423e36b7c0960418f5cc3');
+  runApp(MyApp(apiController: apiController));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final ApiController apiController;
+
+  const MyApp({Key? key, required this.apiController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const TelaLogin(),
+      home: TelaLogin(apiController: apiController),
     );
   }
 }

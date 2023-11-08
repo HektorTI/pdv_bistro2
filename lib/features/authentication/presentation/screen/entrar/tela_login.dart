@@ -1,17 +1,20 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/esqueceu%20senha/tela_esqueceu_senha.dart';
-import 'package:pdv_bistro2/features/authentication/presentation/screen/Aplicativo/tela_aplicatvo.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/login/tela_aplicativo.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 
 class TelaLogin extends StatelessWidget {
-  const TelaLogin({Key? key}) : super(key: key);
+  final ApiController apiController;
+
+  const TelaLogin({Key? key, required this.apiController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(apiController: apiController),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -73,10 +76,12 @@ class TelaLogin extends StatelessWidget {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const EsqueceuSenha()));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    EsqueceuSenha(apiController: apiController),
+                              ),
+                            );
                           },
                           child: const Text(
                             "Esqueceu sua senha?",
@@ -95,7 +100,9 @@ class TelaLogin extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const TelaAplicativo(),
+                            builder: (context) => TelaAplicativo(
+                              apiController: apiController,
+                            ),
                           ),
                         );
                       },
@@ -136,7 +143,9 @@ class TelaLogin extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const TelaRegsitrar(),
+                                    builder: (context) => TelaRegistrar(
+                                      apiController: apiController,
+                                    ),
                                   ),
                                 );
                               },

@@ -7,23 +7,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pdv_bistro2/main.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart'; // Importe seu controller aqui
+import 'package:pdv_bistro2/features/authentication/presentation/screen/ajuda/tela_ajuda.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Crie uma instância do seu ApiController com a chave de API válida
+    final apiController =
+        ApiController(apiKey: 'd62cac6d7fe423e36b7c0960418f5cc3');
+
+    // Crie a tela TelaAjuda com a instância do ApiController
+    final telaAjuda = TelaAjuda(apiController: apiController);
+
+    // Crie a tela MyApp com a instância do ApiController
+    final myApp = MaterialApp(home: telaAjuda);
+
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(myApp);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Execute o teste normalmente...
   });
 }

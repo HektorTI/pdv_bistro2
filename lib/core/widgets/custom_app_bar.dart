@@ -1,12 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/ajuda/tela_ajuda.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
+  final ApiController apiController;
+
+  const CustomAppBar({Key? key, required this.apiController}) : super(key: key);
 
   @override
-  Size get preferredSize => const Size.fromHeight(
-      56.0); // Defina a altura desejada da barra de aplicativos
+  // ignore: library_private_types_in_public_api
+  _CustomAppBarState createState() => _CustomAppBarState();
+
+  @override
+  Size get preferredSize => const Size.fromHeight(56.0);
+}
+
+class _CustomAppBarState extends State<CustomAppBar> {
+  String dateText = 'Carregando...';
+
+  @override
+  void initState() {
+    super.initState();
+    widget.apiController.fetchDataFromAPI().then((data) {
+      setState(() {
+        dateText = data;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +39,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               height: 50,
-              width: 50, // Largura do espaço para a imagem da empresa
+              width: 50,
               child: Image.asset('assets/images/bistro3.png'),
             ),
           ),
           const SizedBox(width: 20),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Software Bistrô',
-                  style: TextStyle(fontSize: 26, color: Colors.white)),
-              Text('3 Novembro 2023',
-                  style: TextStyle(fontSize: 12, color: Colors.white)),
+              const Text(
+                'Software Bistrô',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                dateText,
+                style: const TextStyle(fontSize: 14, color: Colors.white70),
+              ),
             ],
           ),
         ],
@@ -42,14 +69,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             icon: const Icon(
               Icons.live_help,
               color: Colors.white,
-              // Ícone branco
             ),
             onPressed: () {
-              // Ação quando a imagem for clicada
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const TelaAjuda(),
+                  builder: (context) =>
+                      TelaAjuda(apiController: widget.apiController),
                 ),
               );
             },
