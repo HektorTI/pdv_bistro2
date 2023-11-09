@@ -1,11 +1,13 @@
+// ignore_for_file: file_names
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/Theme/color_schemes.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/esqueceu%20senha/tela_esqueceu_senha.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
 
-class TelaLogin extends StatelessWidget {
-  const TelaLogin({Key? key}) : super(key: key);
+class BemVindo extends StatelessWidget {
+  const BemVindo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class TelaLogin extends StatelessWidget {
             width: 550,
             height: 550,
             child: Card(
-              color: const Color.fromARGB(255, 225, 227, 227),
+              // color: const Color.fromARGB(255, 225, 227, 227),
               elevation: 5,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -85,7 +87,7 @@ class TelaLogin extends StatelessWidget {
                     ),
                     const SizedBox(height: 30),
                     MaterialButton(
-                      color: const Color.fromARGB(255, 48, 48, 48),
+                      color: ColorSchemes.lightColorScheme.inversePrimary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -103,7 +105,7 @@ class TelaLogin extends StatelessWidget {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 18,
                           ),
                         ),
@@ -113,20 +115,22 @@ class TelaLogin extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         children: <TextSpan>[
-                          const TextSpan(
+                          TextSpan(
                             text: 'Nao tem uma conta? ',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black, // Cor do texto "Faça seu"
+                              color:
+                                  ColorSchemes.lightColorScheme.inversePrimary,
                             ),
                           ),
                           TextSpan(
                             text: 'Registre-se Agora',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue, // Cor do texto "Login"
+                              color:
+                                  ColorSchemes.darkColorScheme.inversePrimary,
                               decoration: TextDecoration.underline,
                             ),
                             recognizer: TapGestureRecognizer()

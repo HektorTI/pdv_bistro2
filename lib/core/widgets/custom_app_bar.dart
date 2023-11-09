@@ -1,4 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/ajuda/tela_ajuda.dart';
@@ -54,10 +55,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   style: TextStyle(fontSize: 26, color: Colors.white)),
               Text(
                 dateText,
-                style: const TextStyle(
-                  fontSize: 13,
-                  color: Colors.white,
-                ),
+                style: const TextStyle(fontSize: 12, color: Colors.white),
               ),
             ],
           ),

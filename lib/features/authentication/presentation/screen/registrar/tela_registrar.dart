@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/Theme/color_schemes.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
-import 'package:pdv_bistro2/features/authentication/presentation/screen/entrar/tela_login.dart';
-import 'package:pdv_bistro2/features/authentication/presentation/screen/login/tela_aplicativo.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/bemvindo/bem_vindo.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/aplicativo/tela_aplicativo.dart';
 
 class TelaRegsitrar extends StatelessWidget {
   const TelaRegsitrar({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class TelaRegsitrar extends StatelessWidget {
             width: 550,
             height: 550,
             child: Card(
-              color: const Color.fromARGB(255, 225, 227, 227),
+              // color: const Color.fromARGB(255, 225, 227, 227),
               elevation: 5,
               child: Padding(
                 padding: const EdgeInsets.all(6.0),
@@ -69,7 +70,7 @@ class TelaRegsitrar extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     MaterialButton(
-                      color: const Color.fromARGB(255, 48, 48, 48),
+                      color: ColorSchemes.lightColorScheme.inversePrimary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -87,7 +88,7 @@ class TelaRegsitrar extends StatelessWidget {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 18,
                           ),
                         ),
@@ -97,20 +98,22 @@ class TelaRegsitrar extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         children: <TextSpan>[
-                          const TextSpan(
-                            text: 'Ja tem uma conta?  ',
+                          TextSpan(
+                            text: 'Ja tem uma conta? ',
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black, // Cor do texto "Faça seu"
+                              color:
+                                  ColorSchemes.lightColorScheme.inversePrimary,
                             ),
                           ),
                           TextSpan(
                             text: 'Entrar Agora',
-                            style: const TextStyle(
-                              fontSize: 14,
+                            style: TextStyle(
+                              fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue, // Cor do texto "Login"
+                              color:
+                                  ColorSchemes.darkColorScheme.inversePrimary,
                               decoration: TextDecoration.underline,
                             ),
                             recognizer: TapGestureRecognizer()
@@ -119,7 +122,7 @@ class TelaRegsitrar extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const TelaLogin(),
+                                    builder: (context) => const BemVindo(),
                                   ),
                                 );
                               },

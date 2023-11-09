@@ -1,7 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/Theme/color_schemes.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
-import 'package:pdv_bistro2/features/authentication/presentation/screen/login/tela_aplicativo.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/aplicativo/tela_aplicativo.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
 
 class EsqueceuSenha extends StatelessWidget {
@@ -18,7 +19,7 @@ class EsqueceuSenha extends StatelessWidget {
             width: 450,
             height: 450,
             child: Card(
-              color: const Color.fromARGB(255, 225, 227, 227),
+              // color: const Color.fromARGB(255, 225, 227, 227),
               elevation: 5,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -56,7 +57,7 @@ class EsqueceuSenha extends StatelessWidget {
                     ),
                     const SizedBox(height: 30),
                     MaterialButton(
-                      color: const Color.fromARGB(255, 48, 48, 48),
+                      color: ColorSchemes.lightColorScheme.inversePrimary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -74,7 +75,7 @@ class EsqueceuSenha extends StatelessWidget {
                         child: Text(
                           "Enviar Codigo",
                           style: TextStyle(
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 18,
                           ),
                         ),
@@ -84,20 +85,22 @@ class EsqueceuSenha extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         children: <TextSpan>[
-                          const TextSpan(
+                          TextSpan(
                             text: 'Nao tem uma conta? ',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black, // Cor do texto "Faça seu"
+                              color:
+                                  ColorSchemes.lightColorScheme.inversePrimary,
                             ),
                           ),
                           TextSpan(
                             text: 'Registre-se Agora',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
-                              color: Colors.blue, // Cor do texto "Login"
+                              color:
+                                  ColorSchemes.darkColorScheme.inversePrimary,
                               decoration: TextDecoration.underline,
                             ),
                             recognizer: TapGestureRecognizer()

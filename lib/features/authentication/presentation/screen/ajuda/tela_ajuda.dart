@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/Theme/color_schemes.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
@@ -18,7 +19,7 @@ class TelaAjuda extends StatelessWidget {
               width: 550,
               height: 550,
               child: Card(
-                color: const Color.fromARGB(255, 225, 227, 227),
+                // color: const Color.fromARGB(255, 225, 227, 227),
                 elevation: 5,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -46,20 +47,22 @@ class TelaAjuda extends StatelessWidget {
                         child: RichText(
                           text: TextSpan(
                             children: <TextSpan>[
-                              const TextSpan(
+                              TextSpan(
                                 text: 'Nao tem uma conta? ',
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                  color: ColorSchemes
+                                      .lightColorScheme.inversePrimary,
                                 ),
                               ),
                               TextSpan(
                                 text: 'Registre-se Agora',
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
+                                  color: ColorSchemes
+                                      .darkColorScheme.inversePrimary,
                                   decoration: TextDecoration.underline,
                                 ),
                                 recognizer: TapGestureRecognizer()

@@ -13,7 +13,6 @@ class CustomAppBarController {
       final double latitude = position.latitude;
       final double longitude = position.longitude;
 
-      // final apiKey = 'SUA_CHAVE_DE_API'; // Substitua com a sua chave de API
       final url = Uri.parse(
           'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=d62cac6d7fe423e36b7c0960418f5cc3&units=metric');
       final response = await http.get(url);
