@@ -1,7 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controoller.dart';
+import 'package:pdv_bistro2/Theme/custom_color_scheme.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/controller/api_controller.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/ajuda/tela_ajuda.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -36,7 +37,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: const Color.fromARGB(255, 48, 48, 48),
+      backgroundColor: customColorScheme.inverseSurface,
       title: Row(
         children: [
           Padding(
@@ -51,11 +52,17 @@ class _CustomAppBarState extends State<CustomAppBar> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Software Bistrô',
-                  style: TextStyle(fontSize: 26, color: Colors.white)),
+              Text('Software Bistrô',
+                  style: TextStyle(
+                    fontSize: 26,
+                    color: customColorScheme.surfaceTint,
+                  )),
               Text(
                 dateText,
-                style: const TextStyle(fontSize: 12, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: customColorScheme.surfaceTint,
+                ),
               ),
             ],
           ),
@@ -65,9 +72,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
         Padding(
           padding: const EdgeInsets.only(right: 10),
           child: IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.live_help,
-              color: Colors.white,
+              color: customColorScheme.surfaceTint,
             ),
             onPressed: () {
               Navigator.push(

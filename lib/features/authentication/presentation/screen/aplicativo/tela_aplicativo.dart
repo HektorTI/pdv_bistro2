@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
-import 'package:pdv_bistro2/Theme/color_schemes.dart';
 
 class TelaAplicativo extends StatelessWidget {
   const TelaAplicativo({Key? key}) : super(key: key);
@@ -49,22 +48,22 @@ class TelaAplicativo extends StatelessWidget {
                       child: RichText(
                         text: TextSpan(
                           children: <TextSpan>[
-                            TextSpan(
+                            const TextSpan(
                               text: 'Nao tem uma conta? ',
                               style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
-                                color: ColorSchemes
-                                    .lightColorScheme.inversePrimary,
+                                // color: ColorSchemes
+                                //     .lightColorScheme.inversePrimary,
                               ),
                             ),
                             TextSpan(
                               text: 'Registre-se Agora',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
-                                color:
-                                    ColorSchemes.darkColorScheme.inversePrimary,
+                                // color:
+                                //     ColorSchemes.darkColorScheme.inversePrimary,
                                 decoration: TextDecoration.underline,
                               ),
                               recognizer: TapGestureRecognizer()
@@ -73,8 +72,7 @@ class TelaAplicativo extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          const TelaRegsitrar(),
+                                      builder: (context) => const TelaRegsitrar(),
                                     ),
                                   );
                                 },

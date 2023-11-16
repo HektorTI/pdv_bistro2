@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/Theme/custom_color_scheme.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final List<IconData> icons;
   final List<String> labels;
   final List<Function> onPressed;
 
-  const CustomBottomNavigationBar(
-      {super.key,
-      required this.icons,
-      required this.labels,
-      required this.onPressed});
+  const CustomBottomNavigationBar({super.key, required this.icons, required this.labels, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: const Color.fromARGB(255, 225, 227, 227),
+      color: customColorScheme.surfaceContainerHigh,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(icons.length, (index) {
@@ -23,7 +20,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   icons[index],
-                  color: const Color.fromARGB(255, 48, 48, 48),
+                  color: customColorScheme.onSurface,
                 ),
                 onPressed: () {
                   onPressed[index]();
@@ -31,8 +28,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
               ),
               Text(
                 labels[index],
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 48, 48, 48),
+                style: TextStyle(
+                  color: customColorScheme.onSurface,
                   fontSize: 10,
                 ),
               ),

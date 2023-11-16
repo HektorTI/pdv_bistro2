@@ -1,71 +1,136 @@
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/Theme/color_schemes.dart';
+import 'package:pdv_bistro2/Theme/custom_color_scheme.dart';
 
+// *LIGHT THEME GLOBAL
 final lightTheme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorSchemes.lightColorScheme,
+
+  // * Appbar TEMA
+
   appBarTheme: AppBarTheme(
-    backgroundColor: ColorSchemes.lightColorScheme.primary,
+    backgroundColor: ColorSchemes.lightColorScheme.onPrimary,
     foregroundColor: ColorSchemes.lightColorScheme.onPrimary,
-    titleTextStyle: TextStyle(
-      color: ColorSchemes.lightColorScheme.onPrimary,
-      fontSize: 18,
-    ),
   ),
+
+  // BOTTOM NAVIGATION THEME
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: ColorSchemes.lightColorScheme.primary,
     selectedItemColor: ColorSchemes.lightColorScheme.onPrimary,
   ),
+
+  // CARD TEMA
   cardTheme: CardTheme(
-    color: ColorSchemes.lightColorScheme.surface,
-    elevation: 2,
+    color: ColorSchemes.lightColorScheme.surfaceVariant,
+    elevation: 5,
   ),
   textTheme: TextTheme(
-    titleLarge: TextStyle(
+    titleMedium: TextStyle(
       fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: ColorSchemes.lightColorScheme.onPrimary,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w600,
+      color: customColorScheme.inverseSurface, // Cor de texto card Nome e telefone
     ),
-    bodyMedium: TextStyle(
+    headlineLarge: TextStyle(
       fontSize: 12,
-      fontWeight: FontWeight.bold,
-      color: ColorSchemes.lightColorScheme.onPrimary,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w600,
+      color: customColorScheme.inverseSurface, // Cor de texto card Nome e telefone
     ),
+    headlineMedium: TextStyle(
+      fontSize: 16,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w400,
+      color: customColorScheme.inverseSurface, // Cor de texto card Atrasado
+    ),
+    headlineSmall: TextStyle(
+      fontSize: 12,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w300,
+      color: customColorScheme.onSurface, // Cor de texto card letra A
+    ),
+    labelMedium: TextStyle(
+      fontSize: 16,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w600,
+      color: customColorScheme.tertiary, // Cor de texto Consumo e Detalhe Item
+    ),
+    labelSmall: TextStyle(
+      fontSize: 12,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w400,
+      color: customColorScheme.tertiary, // Cor de texto dentro dos cards produto, qtd. etc
+    ),
+    // Adicione mais estilos conforme necessário
   ),
-  hintColor: ColorSchemes.lightColorScheme.primary,
+  hintColor: ColorSchemes.lightColorScheme.onSurface,
 );
 
+// -----------------------------------------------------------------//
+
+// *DARK MODE THEME GLOBAL
 final darkTheme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorSchemes.darkColorScheme,
+
+  // Appbar TEMA
   appBarTheme: AppBarTheme(
-    backgroundColor: const Color(0xFF333333), // Cor de fundo mais escura
-    foregroundColor: ColorSchemes.darkColorScheme.onPrimary,
-    titleTextStyle: TextStyle(
-      color: ColorSchemes.darkColorScheme.onPrimary,
-      fontSize: 18,
-    ),
+    backgroundColor: const Color(0xFF303030), // Cor de fundo mais escura
+    foregroundColor: ColorSchemes.darkColorScheme.primary,
   ),
+
+  // BOTTOM NAVIGATION THEME
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: ColorSchemes.darkColorScheme.primary,
-    selectedItemColor:
-        const Color(0xFFFFFFFF), // Cor de texto nos botões mais clara
+    selectedItemColor: const Color(0xFFFFFFFF),
+    // Cor de texto nos botões mais clara
   ),
-  cardTheme: const CardTheme(
-    color: Color(0xFF222222), // Cor de texto mais escura
-    elevation: 2,
+
+// CARD TEMA
+  // CARD TEMA
+  cardTheme: CardTheme(
+    color: customDarkColorScheme.outline,
+    elevation: 5,
   ),
-  textTheme: const TextTheme(
-    titleLarge: TextStyle(
+  textTheme: TextTheme(
+    titleMedium: TextStyle(
       fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: Color(0xFFFFFFFF), // Cor de texto mais clara
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w600,
+      color: customColorScheme.inverseSurface, // Cor de texto card Nome e telefone
     ),
-    bodyMedium: TextStyle(
+    headlineLarge: TextStyle(
       fontSize: 12,
-      fontWeight: FontWeight.bold,
-      color: Color(0xFFFFFFFF), // Cor de texto mais clara
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w600,
+      color: customColorScheme.onErrorContainer, // Cor de texto card Nome e telefone
     ),
+    headlineMedium: TextStyle(
+      fontSize: 16,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w400,
+      color: customColorScheme.inverseSurface, // Cor de texto card Atrasado
+    ),
+    headlineSmall: TextStyle(
+      fontSize: 12,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w300,
+      color: customColorScheme.onPrimary, // Cor de texto card letra A
+    ),
+    labelMedium: TextStyle(
+      fontSize: 16,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w600,
+      color: customColorScheme.onBackground, // Cor de texto Consumo e Detalhe Item
+    ),
+    labelSmall: TextStyle(
+      fontSize: 12,
+      letterSpacing: 0.09,
+      fontWeight: FontWeight.w400,
+      color: customColorScheme.outlineVariant, // Cor de texto dentro dos cards produto, qtd. etc
+    ),
+    // Adicione mais estilos conforme necessário
   ),
   hintColor: ColorSchemes.darkColorScheme.primary,
 );
