@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      // darkTheme: darkTheme,
+      // theme: lightTheme,
+      darkTheme: darkTheme,
       home: const BemVindo(),
     );
   }

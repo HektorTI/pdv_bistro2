@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/Theme/color_schemes.dart';
+import 'package:pdv_bistro2/Theme/custom_color_scheme.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/aplicativo/tela_aplicativo.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
@@ -26,20 +27,14 @@ class EsqueceuSenha extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Text(
+                    Text(
                       'Esqueceu sua senha?',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.titleMedium ?? const TextStyle(), // Check for null and provide a default style
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      'Não se preocupe. Vamos redefinir',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Text(
+                      ' Não se preucupe. Vamos redefnir.',
+                      style: Theme.of(context).textTheme.headlineMedium ?? const TextStyle(), // Check for null and provide a default style
                     ),
                     const SizedBox(height: 40),
                     TextFormField(
@@ -57,7 +52,7 @@ class EsqueceuSenha extends StatelessWidget {
                     ),
                     const SizedBox(height: 30),
                     MaterialButton(
-                      color: ColorSchemes.lightColorScheme.inversePrimary,
+                      color: customColorScheme.onSurfaceVariant,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -70,39 +65,34 @@ class EsqueceuSenha extends StatelessWidget {
                           ),
                         );
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.all(12.0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
                         child: Text(
-                          "Enviar Codigo",
+                          "Login",
                           style: TextStyle(
-                            // color: Colors.white,
+                            color: customDarkColorScheme.inverseSurface,
                             fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(height: 70),
+                    const SizedBox(height: 60),
                     RichText(
                       text: TextSpan(
                         children: <TextSpan>[
                           TextSpan(
                             text: 'Nao tem uma conta? ',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color:
-                                  ColorSchemes.lightColorScheme.inversePrimary,
-                            ),
+                            style: Theme.of(context).textTheme.headlineLarge ?? const TextStyle(), // Check for null and provide a default style
                           ),
                           TextSpan(
                             text: 'Registre-se Agora',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color:
-                                  ColorSchemes.darkColorScheme.inversePrimary,
-                              decoration: TextDecoration.underline,
-                            ),
+                            style: Theme.of(context).textTheme.headlineLarge?.merge(
+                                  TextStyle(
+                                    // decoration: TextDecoration.underline,
+                                    color: customColorScheme.primary,
+                                  ),
+                                ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 // Ação ao tocar em "Registrar"

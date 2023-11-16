@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pdv_bistro2/Theme/custom_color_scheme.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
@@ -25,22 +26,14 @@ class TelaAplicativo extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Text(
-                      'FUTURA TELA DO APLICATIVO',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        // color: _darkColorScheme.secondary, // Defina a cor desejada
-                      ),
+                    Text(
+                      'Futura tela do aplicativo PDV',
+                      style: Theme.of(context).textTheme.titleMedium ?? const TextStyle(), // Check for null and provide a default style
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      'tela em branco',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        // color: _darkColorScheme.secondary, // Defina a cor desejada
-                      ),
+                    Text(
+                      'Tela em branco',
+                      style: Theme.of(context).textTheme.labelMedium ?? const TextStyle(), // Check for null and provide a default style
                     ),
                     const SizedBox(height: 50),
                     Container(
@@ -48,24 +41,18 @@ class TelaAplicativo extends StatelessWidget {
                       child: RichText(
                         text: TextSpan(
                           children: <TextSpan>[
-                            const TextSpan(
+                            TextSpan(
                               text: 'Nao tem uma conta? ',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                // color: ColorSchemes
-                                //     .lightColorScheme.inversePrimary,
-                              ),
+                              style: Theme.of(context).textTheme.headlineLarge ?? const TextStyle(), // Check for null and provide a default style
                             ),
                             TextSpan(
                               text: 'Registre-se Agora',
-                              style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                // color:
-                                //     ColorSchemes.darkColorScheme.inversePrimary,
-                                decoration: TextDecoration.underline,
-                              ),
+                              style: Theme.of(context).textTheme.headlineLarge?.merge(
+                                    TextStyle(
+                                      // decoration: TextDecoration.underline,
+                                      color: customColorScheme.primary,
+                                    ),
+                                  ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   // Ação ao tocar em "Registrar"

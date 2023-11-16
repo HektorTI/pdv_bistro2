@@ -2,6 +2,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/Theme/custom_color_scheme.dart';
+import 'package:pdv_bistro2/features/authentication/presentation/screen/aplicativo/tela_aplicativo.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/esqueceu%20senha/tela_esqueceu_senha.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
@@ -77,9 +78,9 @@ class BemVindo extends StatelessWidget {
                             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                                       color: customColorScheme.primary,
                                     ) ??
-                                const TextStyle(
-                                    // color: customColorScheme.onPrimaryFixedVariant,
-                                    ),
+                                TextStyle(
+                                  color: customColorScheme.onPrimaryFixedVariant,
+                                ),
                           ),
                         ),
                       ),
@@ -95,7 +96,7 @@ class BemVindo extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const TelaRegsitrar(),
+                            builder: (context) => const TelaAplicativo(),
                           ),
                         );
                       },

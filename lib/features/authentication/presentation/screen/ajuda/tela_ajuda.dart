@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pdv_bistro2/Theme/color_schemes.dart';
+import 'package:pdv_bistro2/Theme/custom_color_scheme.dart';
 import 'package:pdv_bistro2/core/widgets/custom_app_bar.dart';
 import 'package:pdv_bistro2/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:pdv_bistro2/features/authentication/presentation/screen/registrar/tela_registrar.dart';
@@ -26,20 +27,14 @@ class TelaAjuda extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      const Text(
-                        'FUTURA TELA DO APLICATIVO HELP',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      Text(
+                        'Futura tela do aplicativo PDV',
+                        style: Theme.of(context).textTheme.titleMedium ?? const TextStyle(), // Check for null and provide a default style
                       ),
                       const SizedBox(height: 10),
-                      const Text(
-                        'tela em branco',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      Text(
+                        'Tela em branco',
+                        style: Theme.of(context).textTheme.labelMedium ?? const TextStyle(), // Check for null and provide a default style
                       ),
                       const SizedBox(height: 50),
                       Container(
@@ -49,30 +44,23 @@ class TelaAjuda extends StatelessWidget {
                             children: <TextSpan>[
                               TextSpan(
                                 text: 'Nao tem uma conta? ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorSchemes
-                                      .lightColorScheme.inversePrimary,
-                                ),
+                                style: Theme.of(context).textTheme.headlineLarge ?? const TextStyle(), // Check for null and provide a default style
                               ),
                               TextSpan(
                                 text: 'Registre-se Agora',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorSchemes
-                                      .darkColorScheme.inversePrimary,
-                                  decoration: TextDecoration.underline,
-                                ),
+                                style: Theme.of(context).textTheme.headlineLarge?.merge(
+                                      TextStyle(
+                                        // decoration: TextDecoration.underline,
+                                        color: customColorScheme.primary,
+                                      ),
+                                    ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     // Ação ao tocar em "Registrar"
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            const TelaRegsitrar(),
+                                        builder: (context) => const TelaRegsitrar(),
                                       ),
                                     );
                                   },
